@@ -1,0 +1,309 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-family: cursive;
+}
+body{
+    display: grid;
+    height: 100vh;
+    grid-template-areas: 'navbar konten'
+                        'copyright copyright';
+    grid-template-rows: 95% 5%;
+    grid-template-columns: 20% 80%;
+}
+.navbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: navbar;
+    background-color: black;
+}
+.navbar::before,
+.navbar::after{
+    content: "";
+    width: 1%;
+    height: 2%;
+    position: absolute;
+    background-color: aqua;
+    box-shadow: 1px 1px 20px aqua;
+    border-radius: 50%;
+}
+.navbar::before{
+    animation: animasi2 50s linear infinite alternate;
+}
+.navbar::after{
+    animation: animasi2 50s linear infinite alternate-reverse;
+}
+.navbar span{
+    display: none;
+}
+.navbar a{
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.5s linear;
+}
+.navbar a:hover{
+    color: aqua;
+}
+.konten{
+    grid-area: konten;
+}
+.konten::before,
+.konten::after{
+    content: "";
+    width: 1%;
+    height: 2%;
+    position: absolute;
+    background-color: aqua;
+    box-shadow: 1px 1px 20px aqua;
+    border-radius: 50%;
+}
+.konten::before{
+    animation: animasi1 50s linear infinite alternate;
+}
+.konten::after{
+    animation: animasi1 50s linear infinite alternate-reverse;
+}
+.konten h1{
+    color: aqua;
+}
+.konten .email,
+.konten .textArea{
+    padding: 10px 5px;
+    color: black;
+}
+.copyright{
+    text-align: center;
+    background-color: rgb(15, 15, 15);
+    grid-area: copyright;
+}
+.copyright::before,
+.copyright::after{
+    content: "";
+    width: 1%;
+    height: 2%;
+    position: absolute;
+    background-color: aqua;
+    box-shadow: 1px 1px 20px aqua;
+    border-radius: 50%;
+}
+.copyright::before{
+    animation: animasi3 50s linear infinite alternate;
+}
+.copyright::after{
+    animation: animasi3 50s linear infinite alternate-reverse;
+}
+
+/*Didalam konten*/
+.konten{
+    display: grid;
+    grid-template-areas: 'isi gambar';
+}
+.utama{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: gambar;
+    background-color: rgb(10, 10, 10);
+}
+.utama img{
+    width: 70%;
+    height: 60%;
+    border-radius: 5%;
+    filter: brightness(80%);
+    border: 5px double white;
+}
+.utama video{
+    width: 80%;
+    border: 5px solid white;
+}
+.isi{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: isi;
+    background-color: rgb(10, 10, 10);
+}
+.konten table{
+    width: 80%;
+}
+.isi table ul li{
+    list-style-type: none;
+    padding: 20px;
+}
+.isi table tr th{
+    background-color: white;
+    color: black;
+    transition: all 0.5s linear;
+}
+.isi table tr th:hover{
+    background-color: transparent;
+    color: white;
+}
+.isi table tr td ul li{
+    transition: all 0.5s linear;
+}
+.isi table tr td ul li:hover{
+    background-color: white;
+    color: black;
+}
+.konten hr{
+    border: 1;
+    width: 80%;
+}
+button{
+    color: black;
+    padding: 15px 20px;
+}
+.isi .isiKonten{
+    width: 50%;
+}
+
+/*Responsive tablet*/
+@media screen and (max-width: 1000px){
+    *{
+        font-size: 10px;
+    }
+    .navbar{
+        font-size: 15px;
+    }
+    .navbar::before,
+    .navbar::after{
+        width: 1%;
+        height: 1%;
+    }
+    .konten::before,
+    .konten::after{
+        width: 1%;
+        height: 1%;
+    }
+    .copyright::before,
+    .copyright::after{
+        width: 1%;
+        height: 1%;
+    }
+    .konten{
+        grid-template-areas: 'gambar'
+                            'isi';
+        grid-template-rows: 40% 60%;
+    }
+    .konten h1{
+        font-size: 20px;
+    }
+    .konten h2{
+        font-size: 15px;
+    }
+    .utama video{
+        width: 80%;
+    }
+    .utama img{
+        width: 30%;
+    }
+}
+
+/*Responsive mobile*/
+@media screen and (max-width: 600px){
+    body{
+        grid-template-areas: 'navbar'
+                            'konten'
+                            'copyright';
+        grid-template-rows: 10% 85% 5%;
+        grid-template-columns: 100%;
+    }
+    .navbar a{
+        font-size: 15px;
+    }
+    .navbar::before,
+    .navbar::after{
+        width: 1%;
+        height: 0.5%;
+    }
+    .konten::before,
+    .konten::after{
+        width: 1%;
+        height: 0.5%;
+    }
+    .copyright::before,
+    .copyright::after{
+        width: 1%;
+        height: 0.5%;
+    }
+    .navbar{
+        font-size: 15px;
+        flex-direction: row;
+    }
+    .navbar span{
+        display: inline;
+    }
+    .konten .isi{
+        justify-content: start;
+    }
+    .utama video{
+        width: 80%;
+    }
+    .utama img{
+        width: 40%;
+    }
+    .isi .isiKonten{
+        width: 100%;
+    }
+}
+
+/*Animasi*/
+@keyframes animasi1{
+    0%{
+        left: 0%;
+        top: 0%;
+    }
+    30%{
+        left: 50%;
+        top: 20%;
+    }
+    60%{
+        left: 70%;
+        top: 95%;
+    }
+    100%{
+        left: 27%;
+        top: 70%;
+    }
+}
+@keyframes animasi2{
+    0%{
+        left: 80%;
+        top: 40%;
+    }
+    30%{
+        left: 20%;
+        top: 50%;
+    }
+    60%{
+        left: 90%;
+        top: 45%;
+    }
+    100%{
+        left: 77%;
+        top: 70%;
+    }
+}
+@keyframes animasi3{
+    0%{
+        left: 20%;
+        top: 30%;
+    }
+    30%{
+        left: 55%;
+        top: 89%;
+    }
+    60%{
+        left: 71%;
+        top: 32%;
+    }
+    100%{
+        left: 56%;
+        top: 43%;
+    }
+}
