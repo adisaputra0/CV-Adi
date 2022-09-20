@@ -11,6 +11,8 @@ body{
                         'copyright copyright';
     grid-template-rows: 95% 5%;
     grid-template-columns: 20% 80%;
+    animation: animasiBody 5s ease alternate;
+    background-color: #111;
 }
 .navbar{
     display: flex;
@@ -257,6 +259,14 @@ button{
 }
 
 /*Animasi*/
+@keyframes animasiBody {
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
 @keyframes animasi1{
     0%{
         left: 0%;
