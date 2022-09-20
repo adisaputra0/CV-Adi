@@ -161,6 +161,9 @@ button{
 .isi .isiKonten{
     width: 50%;
 }
+.isi .informasi{
+    font-size: 10px;
+}
 
 /*Responsive tablet*/
 @media screen and (max-width: 1000px){
