@@ -166,6 +166,7 @@ button{
 @media screen and (max-width: 1000px){
     *{
         font-size: 10px;
+        font-family: sans-serif;
     }
     .navbar{
         font-size: 15px;
