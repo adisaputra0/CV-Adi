@@ -234,14 +234,14 @@ button{
         width: 2%;
         height: 1%;
         background-color: aqua;
-        box-shadow: 1px 1px 10px aqua;
+        box-shadow: 1px 1px 5px aqua;
     }
     .copyright::before,
     .copyright::after{
         width: 2%;
         height: 1%;
         background-color: aqua;
-        box-shadow: 1px 1px 10px aqua;
+        box-shadow: 1px 1px 5px aqua;
     }
     .navbar{
         font-size: 15px;
